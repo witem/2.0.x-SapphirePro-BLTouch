@@ -55,7 +55,7 @@
 //
 // Servos
 //
-#define SERVO0_PIN        PB8 //PA2 //A$BL
+#define SERVO0_PIN        PB2 //PA8 //A$BL
 
 //	 
 // Limit Switches
