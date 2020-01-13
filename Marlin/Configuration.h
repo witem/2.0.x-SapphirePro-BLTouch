@@ -937,7 +937,7 @@
  *
  * Specify a Probe position as { X, Y, Z }
  */
-#define NOZZLE_TO_PROBE_OFFSET { 0, -36, -0.3 }//A$BL
+#define NOZZLE_TO_PROBE_OFFSET { 0, -36, -1.11 }//A$BL
 
 //A$ Certain types of probes need to stay away from edges
 #define MIN_PROBE_EDGE 5
@@ -949,7 +949,7 @@
 #define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
 
 // Feedrate (mm/m) for the "accurate" probe of each point
-#define Z_PROBE_SPEED_SLOW 1000 //A$
+#define Z_PROBE_SPEED_SLOW (HOMING_FEEDRATE_Z / 2) //A$
 
 /**
  * Multiple Probing
@@ -961,7 +961,7 @@
  * A total of 3 or more adds more slow probes, taking the average.
  */
 #define MULTIPLE_PROBING   2 //A$BL
-#define EXTRA_PROBING    1
+//#define EXTRA_PROBING    1
 
 /**
  * Z probes require clearance when deploying, stowing, and moving between
@@ -977,10 +977,10 @@
  * Example: `M851 Z-5` with a CLEARANCE of 4  =>  9mm from bed to nozzle.
  *     But: `M851 Z+1` with a CLEARANCE of 2  =>  2mm from bed to nozzle.
  */
-#define Z_CLEARANCE_DEPLOY_PROBE   5 //A$ Z Clearance for Deploy/Stow
-#define Z_CLEARANCE_BETWEEN_PROBES  3 //A$ Z Clearance between probe points
-#define Z_CLEARANCE_MULTI_PROBE     1 //A$ Z Clearance between multiple probes
-#define Z_AFTER_PROBING           5 //A$BL Z position after probing is done
+#define Z_CLEARANCE_DEPLOY_PROBE   10 //A$ Z Clearance for Deploy/Stow
+#define Z_CLEARANCE_BETWEEN_PROBES  5 //A$ Z Clearance between probe points
+#define Z_CLEARANCE_MULTI_PROBE     5 //A$ Z Clearance between multiple probes
+#define Z_AFTER_PROBING             5 //A$BL Z position after probing is done
 
 #define Z_PROBE_LOW_POINT          -2 // Farthest distance below the trigger-point to go before stopping
 
