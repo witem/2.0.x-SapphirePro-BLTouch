@@ -29,11 +29,8 @@
 
 #include "../../inc/MarlinConfig.h"
 
-<<<<<<< HEAD:Marlin/src/HAL/HAL_STM32F1/persistent_store_sdcard.cpp
-#if ENABLED(EEPROM_SETTINGS) && NONE(SPI_FLASH_EEPROM_EMULATION, FLASH_EEPROM_EMULATION, SPI_EEPROM, I2C_EEPROM)
-=======
+// #if ENABLED(EEPROM_SETTINGS) && NONE(SPI_FLASH_EEPROM_EMULATION, FLASH_EEPROM_EMULATION, SPI_EEPROM, I2C_EEPROM)
 #if ENABLED(SDCARD_EEPROM_EMULATION)
->>>>>>> 0518dec60d0931745efa2812fa388f33d68cfa29:Marlin/src/HAL/STM32F1/eeprom_sdcard.cpp
 
 #include "../shared/eeprom_api.h"
 
