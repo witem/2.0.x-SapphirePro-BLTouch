@@ -38,13 +38,28 @@
 //
 #define DISABLE_DEBUG
 
+#define SPI_FLASH_EEPROM_EMULATION //A$
+#define SPI_FLASH_EEPROM_OFFSET 0x700000 //A$
+#define SPI_FLASH_DEVICE 2 //A$
+#define SPI_FLASH_CS_PIN PB12 //A$
+
 //
+// Note: MKS Robin board is using SPI2 interface.
+//
+#define SPI_MODULE 2
+
+//
+// Servos
+//
+#define SERVO0_PIN        PB2 //PA8 //A$BL
+
+//	 
 // Limit Switches
 //
 #define X_STOP_PIN        PA15
 #define Y_STOP_PIN        PA12
 #define Z_MIN_PIN         PA11
-#define Z_MAX_PIN         PC4
+//#define Z_MAX_PIN         PC4 //A$
 
 #ifndef FIL_RUNOUT_PIN
   #define FIL_RUNOUT_PIN   PA4   // MT_DET
@@ -69,9 +84,9 @@
 #define E0_STEP_PIN        PD6
 #define E0_DIR_PIN         PD3
 
-#define E1_ENABLE_PIN      PA3
-#define E1_STEP_PIN        PA6
-#define E1_DIR_PIN         PA1
+//#define E1_ENABLE_PIN      PA3
+//#define E1_STEP_PIN        PA6
+//#define E1_DIR_PIN         PA1
 
 //
 // Temperature Sensors
@@ -84,10 +99,11 @@
 // Heaters / Fans
 //
 #define HEATER_0_PIN       PC3   // HEATER1
-#define HEATER_1_PIN       PB0   // HEATER2
+//#define HEATER_1_PIN     PB0   //A$ HEATER2 reused as fan pin
 #define HEATER_BED_PIN     PA0   // HOT BED
 
 #define FAN_PIN            PB1   // FAN
+#define HOTEND_FAN_PIN       PB0 //A$ Hotend fan on Heater2														 
 
 //
 // Thermocouples
@@ -101,7 +117,7 @@
 #define POWER_LOSS_PIN     PA2   // PW_DET
 #define PS_ON_PIN          PA3   // PW_OFF
 
-#define LED_PIN            PB2
+// #define LED_PIN            PB2
 
 //
 // SD Card
@@ -123,8 +139,13 @@
   #define FSMC_CS_PIN        PD7    // NE4
   #define FSMC_RS_PIN        PD11   // A0
 
-  #define LCD_RESET_PIN      PC6    // FSMC_RST
-  #define NO_LCD_REINIT             // Suppress LCD re-initialization
+  #define DOGLCD_MOSI -1 // prevent redefine Conditionals_post.h
+  #define DOGLCD_SCK -1
+  #define LCD_USE_DMA_FSMC //
+  #define FSMC_DMA_DEV DMA2
+  #define FSMC_DMA_CHANNEL DMA_CH5
+  //#define LCD_RESET_PIN      PF6
+  //#define NO_LCD_REINIT             // Suppress LCD re-initialization
 
   #define LCD_BACKLIGHT_PIN  PD13
 
