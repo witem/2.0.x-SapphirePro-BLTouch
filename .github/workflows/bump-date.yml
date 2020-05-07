@@ -5,9 +5,6 @@
 
 name: Bump Distribution Date
 
-on:
-  schedule:
-    - cron: '0 0 * * *'
 
 jobs:
   bump_date:

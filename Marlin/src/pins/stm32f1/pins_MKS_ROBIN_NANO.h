@@ -139,13 +139,13 @@
   #define FSMC_CS_PIN                       PD7   // NE4
   #define FSMC_RS_PIN                       PD11  // A0
 
-  // #define DOGLCD_MOSI -1 // prevent redefine Conditionals_post.h
-  // #define DOGLCD_SCK -1
-  // #define LCD_USE_DMA_FSMC //
-  // #define FSMC_DMA_DEV DMA2
-  // #define FSMC_DMA_CHANNEL DMA_CH5
-  #define LCD_RESET_PIN                     PC6   // FSMC_RST
-  #define NO_LCD_REINIT                           // Suppress LCD re-initialization
+  #define DOGLCD_MOSI -1 // prevent redefine Conditionals_post.h
+  #define DOGLCD_SCK -1
+  #define LCD_USE_DMA_FSMC //
+  #define FSMC_DMA_DEV DMA2
+  #define FSMC_DMA_CHANNEL DMA_CH5
+  // #define LCD_RESET_PIN                     PC6   // FSMC_RST
+  // #define NO_LCD_REINIT                           // Suppress LCD re-initialization
 
   #define LCD_BACKLIGHT_PIN                 PD13
 
